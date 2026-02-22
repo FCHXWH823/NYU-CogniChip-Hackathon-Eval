@@ -1,0 +1,50 @@
+TEST START
+========================================
+E20 Pipelined Processor Simulation
+========================================
+Program:                                                                                                                                                                                    basic-tests/loop1.bin
+
+Loading program:                                                                                                                                                                                    basic-tests/loop1.bin
+Program loaded: 5 instructions
+
+VCD info: dumpfile dumpfile.fst opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+[E20] Pipelined processor reset released, starting execution...
+
+
+[E20] Pipelined processor halted normally after 57 cycles
+
+Final state:
+    pc=    4
+    $0=    0 (0x0000)
+    $1=    0 (0x0000)
+    $2=    0 (0x0000)
+    $3=    0 (0x0000)
+    $4=    0 (0x0000)
+    $5=    0 (0x0000)
+    $6=    0 (0x0000)
+    $7=    0 (0x0000)
+
+Memory (first 128 words):
+208a c402 24ff 4001 4004 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+
+========================================
+TEST PASSED
+========================================
+
+tb_processor_pipelined.v:110: $finish called at 635000 (1ps)

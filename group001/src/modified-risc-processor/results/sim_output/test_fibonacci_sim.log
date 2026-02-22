@@ -1,0 +1,50 @@
+TEST START
+========================================
+E20 Pipelined Processor Simulation
+========================================
+Program:                                                                                                                                                                                       test_fibonacci.bin
+
+Loading program:                                                                                                                                                                                       test_fibonacci.bin
+Program loaded: 11 instructions
+
+VCD info: dumpfile dumpfile.fst opened for output.
+VCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.
+[E20] Pipelined processor reset released, starting execution...
+
+
+[E20] Pipelined processor halted normally after 74 cycles
+
+Final state:
+    pc=   10
+    $0=    0 (0x0000)
+    $1=    0 (0x0000)
+    $2=   21 (0x0015)
+    $3=   34 (0x0022)
+    $4=   34 (0x0022)
+    $5=    0 (0x0000)
+    $6=    0 (0x0000)
+    $7=    0 (0x0000)
+
+Memory (first 128 words):
+2088 2100 2181 c405 24ff 09c0 01a0 0230 
+4003 0190 400a 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+0000 0000 0000 0000 0000 0000 0000 0000 
+
+========================================
+TEST PASSED
+========================================
+
+tb_processor_pipelined.v:110: $finish called at 805000 (1ps)

@@ -1,0 +1,23 @@
+{
+  "stdout_truncated": false,
+  "stdout": "INFO: [EDA] eda: version 0.3.10\nINFO: [EDA] main: eda sim --no-color --tool verilator --seed=1 --verilate-args=-Wno-fatal --waves sim_pipelined_fibonacci; (run from /app/eda.work/d7a19d9b-f767-4b77-a2bd-3c416599d375.edacmd)\nINFO: [EDA] eda_config: --config-yml=eda_config_defaults.yml observed\nINFO: [EDA] eda_config: using config: /app/venv/lib/python3.12/site-packages/opencos/eda_config_defaults.yml\nINFO: [EDA] *** OpenCOS EDA ***\nINFO: [EDA] Detected verilator (/usr/local/bin/verilator)\nINFO: [EDA] Closing logfile: eda.work/eda.log\n",
+  "stdout_size": 539,
+  "stdout_total_size": 539,
+  "message": "Simulation failed with return code 1",
+  "warnings": 0,
+  "errors": 0,
+  "stderr": "Traceback (most recent call last):\n  File \"/app/venv/bin/eda\", line 7, in <module>\n    sys.exit(main_cli())\n             ^^^^^^^^^^\n  File \"/app/venv/lib/python3.12/site-packages/opencos/eda.py\", line 659, in main_cli\n    rc = main()\n         ^^^^^^\n  File \"/app/venv/lib/python3.12/site-packages/opencos/eda.py\", line 618, in main\n    main_ret =  process_tokens(\n                ^^^^^^^^^^^^^^^\n  File \"/app/venv/lib/python3.12/site-packages/opencos/eda.py\", line 462, in process_tokens\n    unparsed = sco.process_tokens(tokens=deferred_tokens, pwd=os.getcwd())\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/venv/lib/python3.12/site-packages/opencos/commands/sim.py\", line 155, in process_tokens\n    unparsed = CommandDesign.process_tokens(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/venv/lib/python3.12/site-packages/opencos/eda_base.py\", line 1905, in process_tokens\n    if self.resolve_target(target_name, caller_info=caller_info):\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/venv/lib/python3.12/site-packages/opencos/eda_base.py\", line 1588, in resolve_target\n    return self.resolve_target_core(target, no_recursion, caller_info)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/venv/lib/python3.12/site-packages/opencos/eda_base.py\", line 1637, in resolve_target_core\n    deps_targets_to_resolve = deps_processor.process_deps_entry()\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/venv/lib/python3.12/site-packages/opencos/deps/deps_processor.py\", line 357, in process_deps_entry\n    self.process_plusargs()\n  File \"/app/venv/lib/python3.12/site-packages/opencos/deps/deps_processor.py\", line 645, in process_plusargs\n    entry_plusargs.update(self.deps_entry.get('plusargs', {}))\nValueError: dictionary update sequence element #0 has length 26; 2 is required\n",
+  "return_code": 1,
+  "start_time": 1771608724.601388,
+  "stop_time": 1771608724.802688,
+  "waves_returned": false,
+  "wave_file": null,
+  "wave_file_size": null,
+  "verilator_version": null,
+  "system_info": null,
+  "work_dir_files": null,
+  "frogger_status_reason": "Simulation failed with return code 1",
+  "fst_s3_key": null,
+  "fst_s3_bucket": null,
+  "error": "Simulation failed with return code 1"
+}

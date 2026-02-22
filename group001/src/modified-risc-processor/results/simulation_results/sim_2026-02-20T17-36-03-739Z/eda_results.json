@@ -1,0 +1,23 @@
+{
+  "stdout_truncated": false,
+  "stdout": "INFO: [EDA] eda: version 0.3.10\nINFO: [EDA] main: eda sim --no-color --tool verilator --seed=1 --verilate-args=-Wno-fatal --waves sim_pipelined_fibonacci; (run from /app/eda.work/5a00edbe-d4a2-43a0-b568-29a5d762af18.edacmd)\nINFO: [EDA] eda_config: --config-yml=eda_config_defaults.yml observed\nINFO: [EDA] eda_config: using config: /app/venv/lib/python3.12/site-packages/opencos/eda_config_defaults.yml\nINFO: [EDA] *** OpenCOS EDA ***\nINFO: [EDA] Detected verilator (/usr/local/bin/verilator)\nERROR: [EDA] Trying to resolve target=./test_fibonacci.bin (file?): called from ./DEPS.yml::sim_pipelined_fibonacci::line=15, File=test_fibonacci.bin not found in directory=./\nINFO: [EDA] Wrote artifacts JSON: eda.work/artifacts.json\nINFO: [EDA] Exiting with 0 warnings, 1 errors\nINFO: [EDA] Closing logfile: eda.work/eda.log\n",
+  "stdout_size": 819,
+  "stdout_total_size": 819,
+  "message": "Simulation failed with return code 10",
+  "warnings": 0,
+  "errors": 0,
+  "stderr": "",
+  "return_code": 10,
+  "start_time": 1771608963.329568,
+  "stop_time": 1771608963.5341392,
+  "waves_returned": false,
+  "wave_file": null,
+  "wave_file_size": null,
+  "verilator_version": null,
+  "system_info": null,
+  "work_dir_files": null,
+  "frogger_status_reason": "Simulation failed with return code 10",
+  "fst_s3_key": null,
+  "fst_s3_bucket": null,
+  "error": "Simulation failed with return code 10"
+}

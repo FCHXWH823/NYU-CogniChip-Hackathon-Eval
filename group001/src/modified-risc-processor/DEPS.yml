@@ -1,0 +1,154 @@
+# DEPS YAML Configuration for E20 Processor Tests
+# This file defines simulation targets for the E20 pipelined processor
+
+# Pipelined processor testbench - Inline test (no external files)
+sim_pipelined_inline:
+  deps:
+    - processor_pipelined.v
+    - tb_processor_pipelined_inline.v
+  top: tb_processor_pipelined_inline
+
+# Pipelined processor - Comprehensive test suite
+sim_test_simple:
+  deps:
+    - processor_pipelined.v
+    - tb_pipelined_tests.v
+  top: tb_pipelined_tests
+  plusargs:
+    test: 0
+
+sim_test_array_sum:
+  deps:
+    - processor_pipelined.v
+    - tb_pipelined_tests.v
+  top: tb_pipelined_tests
+  plusargs:
+    test: 1
+
+sim_test_fibonacci:
+  deps:
+    - processor_pipelined.v
+    - tb_pipelined_tests.v
+  top: tb_pipelined_tests
+  plusargs:
+    test: 2
+
+sim_test_new_instructions:
+  deps:
+    - processor_pipelined.v
+    - tb_pipelined_tests.v
+  top: tb_pipelined_tests
+  plusargs:
+    test: 3
+
+# Pipelined processor testbench - Simple test
+sim_pipelined_simple:
+  deps:
+    - processor_pipelined.v
+    - tb_processor_pipelined.v
+    - test_simple.bin
+  top: tb_processor_pipelined
+  plusargs:
+    program: test_simple.bin
+
+# Pipelined processor testbench - Fibonacci test
+sim_pipelined_fibonacci:
+  deps:
+    - processor_pipelined.v
+    - tb_processor_pipelined.v
+    - test_fibonacci.bin
+  top: tb_processor_pipelined
+  plusargs:
+    program: test_fibonacci.bin
+
+# Pipelined processor testbench - Array sum test
+sim_pipelined_array_sum:
+  deps:
+    - processor_pipelined.v
+    - tb_processor_pipelined.v
+    - test_array_sum.bin
+  top: tb_processor_pipelined
+  plusargs:
+    program: test_array_sum.bin
+
+# Pipelined processor testbench - New instructions test
+sim_pipelined_new_instr:
+  deps:
+    - processor_pipelined.v
+    - tb_processor_pipelined.v
+  top: tb_processor_pipelined
+  plusargs:
+    program: test_new_instructions.bin
+
+# Basic tests - array-sum
+sim_pipelined_basic_array_sum:
+  deps:
+    - processor_pipelined.v
+    - tb_processor_pipelined.v
+    - basic-tests/array-sum.bin
+  top: tb_processor_pipelined
+  plusargs:
+    program: basic-tests/array-sum.bin
+
+# Basic tests - loop1
+sim_pipelined_basic_loop1:
+  deps:
+    - processor_pipelined.v
+    - tb_processor_pipelined.v
+  top: tb_processor_pipelined
+  plusargs:
+    program: basic-tests/loop1.bin
+
+# Basic tests - loop2
+sim_pipelined_basic_loop2:
+  deps:
+    - processor_pipelined.v
+    - tb_processor_pipelined.v
+  top: tb_processor_pipelined
+  plusargs:
+    program: basic-tests/loop2.bin
+
+# Basic tests - loop3
+sim_pipelined_basic_loop3:
+  deps:
+    - processor_pipelined.v
+    - tb_processor_pipelined.v
+  top: tb_processor_pipelined
+  plusargs:
+    program: basic-tests/loop3.bin
+
+# Basic tests - math
+sim_pipelined_basic_math:
+  deps:
+    - processor_pipelined.v
+    - tb_processor_pipelined.v
+  top: tb_processor_pipelined
+  plusargs:
+    program: basic-tests/math.bin
+
+# Basic tests - subroutine1
+sim_pipelined_basic_subroutine1:
+  deps:
+    - processor_pipelined.v
+    - tb_processor_pipelined.v
+  top: tb_processor_pipelined
+  plusargs:
+    program: basic-tests/subroutine1.bin
+
+# Basic tests - subroutine2
+sim_pipelined_basic_subroutine2:
+  deps:
+    - processor_pipelined.v
+    - tb_processor_pipelined.v
+  top: tb_processor_pipelined
+  plusargs:
+    program: basic-tests/subroutine2.bin
+
+# Basic tests - vars1
+sim_pipelined_basic_vars1:
+  deps:
+    - processor_pipelined.v
+    - tb_processor_pipelined.v
+  top: tb_processor_pipelined
+  plusargs:
+    program: basic-tests/vars1.bin

@@ -1,0 +1,28 @@
+E20 Pipelined Processor - Basic Tests Results
+Date: Fri Feb 20 13:04:58 EST 2026
+========================================
+
+PASS: array-sum
+  Cycles: 52
+PASS: loop1
+  Cycles: 57
+PASS: loop2
+  Cycles: 60
+PASS: loop3
+  Cycles: 120
+PASS: math
+  Cycles: 11
+PASS: subroutine1
+  Cycles: 12
+PASS: subroutine2
+  Cycles: 23
+PASS: vars1
+  Cycles: 12
+
+========================================
+Summary:
+  Total:   8
+  Passed:  8
+  Failed:  0
+  Skipped: 0
+========================================
