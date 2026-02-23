@@ -1,0 +1,60 @@
+INFO: [EDA] eda: version 0.3.10
+INFO: [EDA] main: eda sim --no-color --tool verilator --seed=1 --verilate-args=-Wno-fatal --waves tb_llm_memory_controller; (run from /app/eda.work/a7b1e63b-6495-4291-86f5-8be20667d538.edacmd)
+INFO: [EDA] eda_config: --config-yml=eda_config_defaults.yml observed
+INFO: [EDA] eda_config: using config: /app/venv/lib/python3.12/site-packages/opencos/eda_config_defaults.yml
+INFO: [EDA] *** OpenCOS EDA ***
+INFO: [EDA] Detected verilator (/usr/local/bin/verilator)
+INFO: [EDA] sim: top-most target name: tb_llm_memory_controller
+INFO: [EDA] exec: /usr/local/bin/verilator --binary -Wno-CASEINCOMPLETE -Wno-REALCVT -Wno-SELRANGE -Wno-TIMESCALEMOD -Wno-UNSIGNED -Wno-WIDTH -Wno-fatal --timing --assert --autoflush -sv -CFLAGS -O1 -j 7 --trace-structs --trace-params --trace-fst -top tb_llm_memory_controller -o sim.exe +define+SIMULATION /app/eda.work/a7b1e63b-6495-4291-86f5-8be20667d538.edacmd/lm_memory_controller_Cognichip/rtl/config_regs.sv /app/eda.work/a7b1e63b-6495-4291-86f5-8be20667d538.edacmd/lm_memory_controller_Cognichip/rtl/tile_scheduler.sv /app/eda.work/a7b1e63b-6495-4291-86f5-8be20667d538.edacmd/lm_memory_controller_Cognichip/rtl/dram_prefetch_engine.sv /app/eda.work/a7b1e63b-6495-4291-86f5-8be20667d538.edacmd/lm_memory_controller_Cognichip/rtl/sram_bank_arbiter.sv /app/eda.work/a7b1e63b-6495-4291-86f5-8be20667d538.edacmd/lm_memory_controller_Cognichip/rtl/llm_memory_controller.sv /app/eda.work/a7b1e63b-6495-4291-86f5-8be20667d538.edacmd/lm_memory_controller_Cognichip/tb/tb_llm_memory_controller.sv (in eda.work/tb_llm_memory_controller.sim, tee_fpath='compile.log')
+INFO: [EDA] PID 4233 for /usr/local/bin/verilator
+make: Entering directory '/app/eda.work/a7b1e63b-6495-4291-86f5-8be20667d538.edacmd/eda.work/tb_llm_memory_controller.sim/obj_dir'
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated.o /usr/local/share/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_fst_c.o /usr/local/share/verilator/include/verilated_fst_c.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_timing.o /usr/local/share/verilator/include/verilated_timing.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_threads.o /usr/local/share/verilator/include/verilated_threads.cpp
+python3 /usr/local/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtb_llm_memory_controller.cpp Vtb_llm_memory_controller___024root__DepSet_h9ee93a33__0.cpp Vtb_llm_memory_controller___024root__DepSet_h4d38aef5__0.cpp Vtb_llm_memory_controller__main.cpp Vtb_llm_memory_controller__Trace__0.cpp Vtb_llm_memory_controller__ConstPool_0.cpp Vtb_llm_memory_controller___024root__Slow.cpp Vtb_llm_memory_controller___024root__DepSet_h9ee93a33__0__Slow.cpp Vtb_llm_memory_controller___024root__DepSet_h4d38aef5__0__Slow.cpp Vtb_llm_memory_controller__Syms.cpp Vtb_llm_memory_controller__Trace__0__Slow.cpp Vtb_llm_memory_controller__TraceDecls__0__Slow.cpp > Vtb_llm_memory_controller__ALL.cpp
+echo "" > Vtb_llm_memory_controller__ALL.verilator_deplist.tmp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o Vtb_llm_memory_controller__ALL.o Vtb_llm_memory_controller__ALL.cpp
+g++    verilated.o verilated_fst_c.o verilated_timing.o verilated_threads.o Vtb_llm_memory_controller__ALL.a   -lz  -pthread -lpthread -latomic   -o sim.exe
+rm Vtb_llm_memory_controller__ALL.verilator_deplist.tmp
+make: Leaving directory '/app/eda.work/a7b1e63b-6495-4291-86f5-8be20667d538.edacmd/eda.work/tb_llm_memory_controller.sim/obj_dir'
+- V e r i l a t i o n   R e p o r t: Verilator 5.038 2025-07-08 rev v5.038
+- Verilator: Built from 0.412 MB sources in 7 modules, into 0.903 MB in 12 C++ files needing 0.002 MB
+- Verilator: Walltime 3.688 s (elab=0.007, cvt=0.063, bld=3.599); cpu 0.104 s on 7 threads; alloced 60.012 MB
+INFO: [EDA] subprocess_run_background: wrote: /app/eda.work/a7b1e63b-6495-4291-86f5-8be20667d538.edacmd/eda.work/tb_llm_memory_controller.sim/compile.log
+INFO: [EDA] Tool - verilator, total counts: 0 tool warnings, 0 tool errors
+INFO: [EDA] exec: ./obj_dir/sim.exe +trace +verilator+seed+1 (in eda.work/tb_llm_memory_controller.sim, tee_fpath='sim.log')
+INFO: [EDA] PID 4270 for ./obj_dir/sim.exe
+TEST START
+=============================================================================
+LLM Memory Controller Integration Testbench
+=============================================================================
+
+--- Test 1: Single Tile Fetch ---
+
+--- Test 2: Multi-Tile Sequence ---
+LOG: 8026000 : INFO : tb_llm_mem_ctrl : test2_tile_count : expected=4 actual=4
+
+--- Test 3: Performance Counter Readback ---
+LOG: 8056000 : INFO : tb_llm_mem_ctrl : test3_status_read : cfg_status=0x00000002
+LOG: 8056000 : INFO : tb_llm_mem_ctrl : test3_perf : cycle_count=576 dram_read_beats=32 dram_write_beats=16 tile_count=4 idle_cycles=428
+
+--- Test 4: Writeback Path ---
+LOG: 9876000 : INFO : tb_llm_mem_ctrl : test4_write_data : first DRAM beat matches expected
+
+=============================================================================
+Test Summary:
+  Total Tests: 4
+  Errors: 0
+=============================================================================
+TEST PASSED
+- /app/eda.work/a7b1e63b-6495-4291-86f5-8be20667d538.edacmd/lm_memory_controller_Cognichip/tb/tb_llm_memory_controller.sv:667: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.038 2025-07-08
+- Verilator: $finish at 10us; walltime 0.004 s; speed 2.265 ms/s
+- Verilator: cpu 0.004 s on 1 threads; alloced 203 MB
+INFO: [EDA] subprocess_run_background: wrote: /app/eda.work/a7b1e63b-6495-4291-86f5-8be20667d538.edacmd/eda.work/tb_llm_memory_controller.sim/sim.log
+INFO: [EDA] Tool - verilator, total counts: 0 tool warnings, 0 tool errors
+INFO: [EDA] sim - verilator - tb_llm_memory_controller: No errors observed.
+INFO: [EDA] Closing logfile: eda.work/eda.log
+INFO: [EDA] Wrote artifacts JSON: eda.work/tb_llm_memory_controller.sim/artifacts.json
+INFO: [EDA] Exiting with 0 warnings, 0 errors

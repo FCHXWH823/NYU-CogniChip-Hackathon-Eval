@@ -1,0 +1,12 @@
+[project]
+name = "lm-memory-controller-model"
+version = "0.1.0"
+description = "Analytical performance model for edge LLM memory controller"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib>=3.7",
+    "numpy>=1.24",
+]
+
+[dependency-groups]
+dev = []

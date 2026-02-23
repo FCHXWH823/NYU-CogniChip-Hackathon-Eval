@@ -1,0 +1,82 @@
+# =============================================================================
+# Root DEPS.yml - Main simulation configuration
+# =============================================================================
+
+# SRAM Bank Arbiter Unit Test
+tb_sram_bank_arbiter:
+  deps:
+    - lm_memory_controller_Cognichip/rtl/sram_bank_arbiter.sv
+    - lm_memory_controller_Cognichip/tb/tb_sram_bank_arbiter.sv
+  top: tb_sram_bank_arbiter
+
+# Tile Scheduler Unit Test
+tb_tile_scheduler:
+  deps:
+    - lm_memory_controller_Cognichip/rtl/tile_scheduler.sv
+    - lm_memory_controller_Cognichip/tb/tb_tile_scheduler.sv
+  top: tb_tile_scheduler
+
+# DRAM Prefetch Engine Unit Test
+tb_dram_prefetch_engine:
+  deps:
+    - lm_memory_controller_Cognichip/rtl/dram_prefetch_engine.sv
+    - lm_memory_controller_Cognichip/tb/tb_dram_prefetch_engine.sv
+  top: tb_dram_prefetch_engine
+
+# Config Registers Unit Test
+tb_config_regs:
+  deps:
+    - lm_memory_controller_Cognichip/rtl/config_regs.sv
+    - lm_memory_controller_Cognichip/tb/tb_config_regs.sv
+  top: tb_config_regs
+
+# LLM Memory Controller - Baseline vs Optimized Comparison Test
+tb_llm_memory_controller_comparison:
+  deps:
+    - lm_memory_controller_Cognichip/rtl/config_regs.sv
+    - lm_memory_controller_Cognichip/rtl/tile_scheduler.sv
+    - lm_memory_controller_Cognichip/rtl/dram_prefetch_engine.sv
+    - lm_memory_controller_Cognichip/rtl/sram_bank_arbiter.sv
+    - lm_memory_controller_Cognichip/rtl/llm_memory_controller.sv
+    - lm_memory_controller_Cognichip/tb/tb_llm_memory_controller_comparison.sv
+  top: tb_llm_memory_controller_comparison
+
+# LLM Memory Controller - Performance Counter Demo Test
+tb_llm_memory_controller_perf:
+  deps:
+    - lm_memory_controller_Cognichip/rtl/config_regs.sv
+    - lm_memory_controller_Cognichip/rtl/tile_scheduler.sv
+    - lm_memory_controller_Cognichip/rtl/dram_prefetch_engine.sv
+    - lm_memory_controller_Cognichip/rtl/sram_bank_arbiter.sv
+    - lm_memory_controller_Cognichip/rtl/llm_memory_controller.sv
+    - lm_memory_controller_Cognichip/tb/tb_llm_memory_controller_perf.sv
+  top: tb_llm_memory_controller_perf
+
+# LLM Memory Controller - Integration Test
+tb_llm_memory_controller:
+  deps:
+    - lm_memory_controller_Cognichip/rtl/config_regs.sv
+    - lm_memory_controller_Cognichip/rtl/tile_scheduler.sv
+    - lm_memory_controller_Cognichip/rtl/dram_prefetch_engine.sv
+    - lm_memory_controller_Cognichip/rtl/sram_bank_arbiter.sv
+    - lm_memory_controller_Cognichip/rtl/llm_memory_controller.sv
+    - lm_memory_controller_Cognichip/tb/tb_llm_memory_controller.sv
+  top: tb_llm_memory_controller
+
+# GEMM Traffic Replay Test
+tb_gemm_traffic:
+  deps:
+    - lm_memory_controller_Cognichip/rtl/config_regs.sv
+    - lm_memory_controller_Cognichip/rtl/tile_scheduler.sv
+    - lm_memory_controller_Cognichip/rtl/dram_prefetch_engine.sv
+    - lm_memory_controller_Cognichip/rtl/sram_bank_arbiter.sv
+    - lm_memory_controller_Cognichip/rtl/llm_memory_controller.sv
+    - lm_memory_controller_Cognichip/tb/tb_gemm_traffic.sv
+  top: tb_gemm_traffic
+
+# Dynamic Reconfiguration Test
+tb_dynamic_reconfig:
+  deps:
+    - lm_memory_controller_Cognichip/rtl/config_regs.sv
+    - lm_memory_controller_Cognichip/tb/tb_dynamic_reconfig.sv
+  top: tb_dynamic_reconfig

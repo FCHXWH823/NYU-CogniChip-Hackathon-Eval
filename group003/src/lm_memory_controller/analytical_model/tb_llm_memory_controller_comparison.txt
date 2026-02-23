@@ -1,0 +1,353 @@
+INFO: [EDA] eda: version 0.3.10
+INFO: [EDA] main: eda sim --no-color --tool verilator --seed=1 --verilate-args=-Wno-fatal --waves tb_llm_memory_controller_comparison; (run from /app/eda.work/aa4539b5-85c5-42bc-a9f6-6f19112981d3.edacmd)
+INFO: [EDA] eda_config: --config-yml=eda_config_defaults.yml observed
+INFO: [EDA] eda_config: using config: /app/venv/lib/python3.12/site-packages/opencos/eda_config_defaults.yml
+INFO: [EDA] *** OpenCOS EDA ***
+INFO: [EDA] Detected verilator (/usr/local/bin/verilator)
+INFO: [EDA] sim: top-most target name: tb_llm_memory_controller_comparison
+INFO: [EDA] --waves arg present, no $dumpfile found, adding SV file: /app/venv/lib/python3.12/site-packages/opencos/commands/../_waves_pkg.sv
+INFO: [EDA] exec: /usr/local/bin/verilator --binary -Wno-CASEINCOMPLETE -Wno-REALCVT -Wno-SELRANGE -Wno-TIMESCALEMOD -Wno-UNSIGNED -Wno-WIDTH -Wno-fatal --timing --assert --autoflush -sv -CFLAGS -O1 -j 7 --trace-structs --trace-params --trace-fst -top tb_llm_memory_controller_comparison -o sim.exe +define+SIMULATION /app/eda.work/aa4539b5-85c5-42bc-a9f6-6f19112981d3.edacmd/lm_memory_controller_Cognichip/rtl/config_regs.sv /app/eda.work/aa4539b5-85c5-42bc-a9f6-6f19112981d3.edacmd/lm_memory_controller_Cognichip/rtl/tile_scheduler.sv /app/eda.work/aa4539b5-85c5-42bc-a9f6-6f19112981d3.edacmd/lm_memory_controller_Cognichip/rtl/dram_prefetch_engine.sv /app/eda.work/aa4539b5-85c5-42bc-a9f6-6f19112981d3.edacmd/lm_memory_controller_Cognichip/rtl/sram_bank_arbiter.sv /app/eda.work/aa4539b5-85c5-42bc-a9f6-6f19112981d3.edacmd/lm_memory_controller_Cognichip/rtl/llm_memory_controller.sv /app/eda.work/aa4539b5-85c5-42bc-a9f6-6f19112981d3.edacmd/lm_memory_controller_Cognichip/tb/tb_llm_memory_controller_comparison.sv /app/venv/lib/python3.12/site-packages/opencos/_waves_pkg.sv (in eda.work/tb_llm_memory_controller_comparison.sim, tee_fpath='compile.log')
+INFO: [EDA] PID 5178 for /usr/local/bin/verilator
+make: Entering directory '/app/eda.work/aa4539b5-85c5-42bc-a9f6-6f19112981d3.edacmd/eda.work/tb_llm_memory_controller_comparison.sim/obj_dir'
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated.o /usr/local/share/verilator/include/verilated.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_fst_c.o /usr/local/share/verilator/include/verilated_fst_c.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_timing.o /usr/local/share/verilator/include/verilated_timing.cpp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_threads.o /usr/local/share/verilator/include/verilated_threads.cpp
+python3 /usr/local/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtb_llm_memory_controller_comparison.cpp Vtb_llm_memory_controller_comparison___024root__DepSet_he9e17d92__0.cpp Vtb_llm_memory_controller_comparison___024root__DepSet_h9a35cce3__0.cpp Vtb_llm_memory_controller_comparison__main.cpp Vtb_llm_memory_controller_comparison__Trace__0.cpp Vtb_llm_memory_controller_comparison__ConstPool_0.cpp Vtb_llm_memory_controller_comparison___024root__Slow.cpp Vtb_llm_memory_controller_comparison___024root__DepSet_he9e17d92__0__Slow.cpp Vtb_llm_memory_controller_comparison___024root__DepSet_h9a35cce3__0__Slow.cpp Vtb_llm_memory_controller_comparison__waves_pkg__Slow.cpp Vtb_llm_memory_controller_comparison__waves_pkg__DepSet_h9b0408b6__0__Slow.cpp Vtb_llm_memory_controller_comparison__waves_pkg__DepSet_hac909a07__0__Slow.cpp Vtb_llm_memory_controller_comparison__Syms.cpp Vtb_llm_memory_controller_comparison__Trace__0__Slow.cpp Vtb_llm_memory_controller_comparison__TraceDecls__0__Slow.cpp > Vtb_llm_memory_controller_comparison__ALL.cpp
+echo "" > Vtb_llm_memory_controller_comparison__ALL.verilator_deplist.tmp
+ccache g++ -Os  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=1 -DVM_TRACE_VCD=0 -DVM_TRACE_SAIF=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-subobject-linkage -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -DVL_TIME_CONTEXT   -fcoroutines -c -o Vtb_llm_memory_controller_comparison__ALL.o Vtb_llm_memory_controller_comparison__ALL.cpp
+g++    verilated.o verilated_fst_c.o verilated_timing.o verilated_threads.o Vtb_llm_memory_controller_comparison__ALL.a   -lz  -pthread -lpthread -latomic   -o sim.exe
+rm Vtb_llm_memory_controller_comparison__ALL.verilator_deplist.tmp
+make: Leaving directory '/app/eda.work/aa4539b5-85c5-42bc-a9f6-6f19112981d3.edacmd/eda.work/tb_llm_memory_controller_comparison.sim/obj_dir'
+- V e r i l a t i o n   R e p o r t: Verilator 5.038 2025-07-08 rev v5.038
+- Verilator: Built from 0.528 MB sources in 8 modules, into 0.798 MB in 15 C++ files needing 0.001 MB
+- Verilator: Walltime 3.041 s (elab=0.007, cvt=0.050, bld=2.967); cpu 0.087 s on 7 threads; alloced 59.016 MB
+INFO: [EDA] subprocess_run_background: wrote: /app/eda.work/aa4539b5-85c5-42bc-a9f6-6f19112981d3.edacmd/eda.work/tb_llm_memory_controller_comparison.sim/compile.log
+INFO: [EDA] Tool - verilator, total counts: 0 tool warnings, 0 tool errors
+INFO: [EDA] exec: ./obj_dir/sim.exe +trace +verilator+seed+1 (in eda.work/tb_llm_memory_controller_comparison.sim, tee_fpath='sim.log')
+INFO: [EDA] PID 5215 for ./obj_dir/sim.exe
+                   0 _waves_pkg.init_trace: Starting tracing to ./dump.fst
+
+===============================================================================
+         LLM MEMORY CONTROLLER - BASELINE vs OPTIMIZED COMPARISON
+===============================================================================
+
+========================================
+  TEST 1: BASELINE MODE
+========================================
+[BASELINE] Waiting for done...
+7565000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+9585000 TILE_DONE (sticky asserted)
+16725000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+18745000 TILE_DONE (sticky asserted)
+25885000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+27905000 TILE_DONE (sticky asserted)
+35045000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+37065000 TILE_DONE (sticky asserted)
+49365000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+51385000 TILE_DONE (sticky asserted)
+58525000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+60545000 TILE_DONE (sticky asserted)
+67685000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+69705000 TILE_DONE (sticky asserted)
+76845000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+78865000 TILE_DONE (sticky asserted)
+91165000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+93185000 TILE_DONE (sticky asserted)
+100325000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+102345000 TILE_DONE (sticky asserted)
+109485000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+111505000 TILE_DONE (sticky asserted)
+118645000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+120665000 TILE_DONE (sticky asserted)
+132965000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+134985000 TILE_DONE (sticky asserted)
+142125000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+144145000 TILE_DONE (sticky asserted)
+151285000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+153305000 TILE_DONE (sticky asserted)
+160445000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+162465000 TILE_DONE (sticky asserted)
+174765000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+176785000 TILE_DONE (sticky asserted)
+183925000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+185945000 TILE_DONE (sticky asserted)
+193085000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+195105000 TILE_DONE (sticky asserted)
+202245000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+204265000 TILE_DONE (sticky asserted)
+216565000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+218585000 TILE_DONE (sticky asserted)
+225725000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+227745000 TILE_DONE (sticky asserted)
+234885000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+236905000 TILE_DONE (sticky asserted)
+244045000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+246065000 TILE_DONE (sticky asserted)
+258365000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+260385000 TILE_DONE (sticky asserted)
+267525000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+269545000 TILE_DONE (sticky asserted)
+276685000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+278705000 TILE_DONE (sticky asserted)
+285845000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+287865000 TILE_DONE (sticky asserted)
+300165000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+302185000 TILE_DONE (sticky asserted)
+309325000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+311345000 TILE_DONE (sticky asserted)
+318485000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+320505000 TILE_DONE (sticky asserted)
+327645000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+329665000 TILE_DONE (sticky asserted)
+341965000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+343985000 TILE_DONE (sticky asserted)
+351125000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+353145000 TILE_DONE (sticky asserted)
+360285000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+362305000 TILE_DONE (sticky asserted)
+369445000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+371465000 TILE_DONE (sticky asserted)
+383765000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+385785000 TILE_DONE (sticky asserted)
+392925000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+394945000 TILE_DONE (sticky asserted)
+402085000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+404105000 TILE_DONE (sticky asserted)
+411245000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+413265000 TILE_DONE (sticky asserted)
+425565000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+427585000 TILE_DONE (sticky asserted)
+434725000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+436745000 TILE_DONE (sticky asserted)
+443885000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+445905000 TILE_DONE (sticky asserted)
+453045000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+455065000 TILE_DONE (sticky asserted)
+467365000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+469385000 TILE_DONE (sticky asserted)
+476525000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+478545000 TILE_DONE (sticky asserted)
+485685000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+487705000 TILE_DONE (sticky asserted)
+494845000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+496865000 TILE_DONE (sticky asserted)
+509165000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+511185000 TILE_DONE (sticky asserted)
+518325000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+520345000 TILE_DONE (sticky asserted)
+527485000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+529505000 TILE_DONE (sticky asserted)
+536645000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+538665000 TILE_DONE (sticky asserted)
+550965000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+552985000 TILE_DONE (sticky asserted)
+560125000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+562145000 TILE_DONE (sticky asserted)
+569285000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+571305000 TILE_DONE (sticky asserted)
+578445000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+580465000 TILE_DONE (sticky asserted)
+592765000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+594785000 TILE_DONE (sticky asserted)
+601925000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+603945000 TILE_DONE (sticky asserted)
+611085000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+613105000 TILE_DONE (sticky asserted)
+620245000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+622265000 TILE_DONE (sticky asserted)
+634565000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+636585000 TILE_DONE (sticky asserted)
+643725000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+645745000 TILE_DONE (sticky asserted)
+652885000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+654905000 TILE_DONE (sticky asserted)
+662045000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+664065000 TILE_DONE (sticky asserted)
+[BASELINE] Done signal asserted!
+
+[BASELINE] Performance Counters:
+  total_cycles          = 66881
+  dram_read_beats       = 8192
+  dram_write_beats      = 1024
+  tile_count            = 53240
+  idle_cycles           = 41345
+  compute_efficiency    = 38.18%
+  dram_bw_utilization   = 0.00%
+
+========================================
+  TEST 2: OPTIMIZED MODE
+========================================
+[OPTIMIZED] Waiting for done...
+676865000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+684005000 TILE_DONE (sticky asserted)
+684035000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+691175000 TILE_DONE (sticky asserted)
+691205000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+698345000 TILE_DONE (sticky asserted)
+698375000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+705515000 TILE_DONE (sticky asserted)
+710705000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+717845000 TILE_DONE (sticky asserted)
+717875000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+725015000 TILE_DONE (sticky asserted)
+725045000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+732185000 TILE_DONE (sticky asserted)
+732215000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+739355000 TILE_DONE (sticky asserted)
+744545000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+751685000 TILE_DONE (sticky asserted)
+751715000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+758855000 TILE_DONE (sticky asserted)
+758885000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+766025000 TILE_DONE (sticky asserted)
+766055000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+773195000 TILE_DONE (sticky asserted)
+778385000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+785525000 TILE_DONE (sticky asserted)
+785555000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+792695000 TILE_DONE (sticky asserted)
+792725000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+799865000 TILE_DONE (sticky asserted)
+799895000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+807035000 TILE_DONE (sticky asserted)
+812225000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+819365000 TILE_DONE (sticky asserted)
+819395000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+826535000 TILE_DONE (sticky asserted)
+826565000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+833705000 TILE_DONE (sticky asserted)
+833735000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+840875000 TILE_DONE (sticky asserted)
+846065000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+853205000 TILE_DONE (sticky asserted)
+853235000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+860375000 TILE_DONE (sticky asserted)
+860405000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+867545000 TILE_DONE (sticky asserted)
+867575000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+874715000 TILE_DONE (sticky asserted)
+879905000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+887045000 TILE_DONE (sticky asserted)
+887075000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+894215000 TILE_DONE (sticky asserted)
+894245000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+901385000 TILE_DONE (sticky asserted)
+901415000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+908555000 TILE_DONE (sticky asserted)
+913745000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+920885000 TILE_DONE (sticky asserted)
+920915000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+928055000 TILE_DONE (sticky asserted)
+928085000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+935225000 TILE_DONE (sticky asserted)
+935255000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+942395000 TILE_DONE (sticky asserted)
+947585000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+954725000 TILE_DONE (sticky asserted)
+954755000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+961895000 TILE_DONE (sticky asserted)
+961925000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+969065000 TILE_DONE (sticky asserted)
+969095000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+976235000 TILE_DONE (sticky asserted)
+981425000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+988565000 TILE_DONE (sticky asserted)
+988595000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+995735000 TILE_DONE (sticky asserted)
+995765000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+1002905000 TILE_DONE (sticky asserted)
+1002935000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+1010075000 TILE_DONE (sticky asserted)
+1015265000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+1022405000 TILE_DONE (sticky asserted)
+1022435000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+1029575000 TILE_DONE (sticky asserted)
+1029605000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+1036745000 TILE_DONE (sticky asserted)
+1036775000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+1043915000 TILE_DONE (sticky asserted)
+1049105000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+1056245000 TILE_DONE (sticky asserted)
+1056275000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+1063415000 TILE_DONE (sticky asserted)
+1063445000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+1070585000 TILE_DONE (sticky asserted)
+1070615000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+1077755000 TILE_DONE (sticky asserted)
+1082945000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+1090085000 TILE_DONE (sticky asserted)
+1090115000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+1097255000 TILE_DONE (sticky asserted)
+1097285000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+1104425000 TILE_DONE (sticky asserted)
+1104455000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+1111595000 TILE_DONE (sticky asserted)
+1116785000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+1123925000 TILE_DONE (sticky asserted)
+1123955000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+1131095000 TILE_DONE (sticky asserted)
+1131125000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+1138265000 TILE_DONE (sticky asserted)
+1138295000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+1145435000 TILE_DONE (sticky asserted)
+1150625000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+1157765000 TILE_DONE (sticky asserted)
+1157795000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+1164935000 TILE_DONE (sticky asserted)
+1164965000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+1172105000 TILE_DONE (sticky asserted)
+1172135000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+1179275000 TILE_DONE (sticky asserted)
+1184465000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+1191605000 TILE_DONE (sticky asserted)
+1191635000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+1198775000 TILE_DONE (sticky asserted)
+1198805000 NEW_TILE accepted: a=0 b=32 c=64 m=16 n=16 k=16
+1205945000 TILE_DONE (sticky asserted)
+1205975000 NEW_TILE accepted: a=16 b=32 c=64 m=16 n=16 k=16
+1207995000 TILE_DONE (sticky asserted)
+[OPTIMIZED] Done signal asserted!
+
+[OPTIMIZED] Performance Counters:
+  total_cycles          = 54344
+  dram_read_beats       = 8192
+  dram_write_beats      = 1024
+  tile_count            = 8447
+  idle_cycles           = 28808
+  compute_efficiency    = 46.99%
+  dram_bw_utilization   = 0.00%
+
+===============================================================================
+                    BASELINE vs OPTIMIZED COMPARISON
+===============================================================================
+
+METRIC                          BASELINE        OPTIMIZED       IMPROVEMENT
+-------------------------------------------------------------------------------
+total_cycles                    66881           54344           1.23x faster
+dram_read_beats                 8192            8192            0
+dram_write_beats                1024            1024            0
+tile_count                      53240           8447           
+idle_cycles                     41345           28808           -12537
+
+KEY METRICS:
+  Compute Efficiency            38.18         % 46.99         % 8.81%
+  DRAM BW Utilization           0.00          % 0.00          % 0.00%
+  Overall Speedup               -               -               1.23x
+
+===============================================================================
+
+===============================================================================
+                           TEST COMPLETE
+===============================================================================
+
+- /app/eda.work/aa4539b5-85c5-42bc-a9f6-6f19112981d3.edacmd/lm_memory_controller_Cognichip/tb/tb_llm_memory_controller_comparison.sv:624: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.038 2025-07-08
+- Verilator: $finish at 1ms; walltime 0.211 s; speed 5.758 ms/s
+- Verilator: cpu 0.211 s on 1 threads; alloced 204 MB
+INFO: [EDA] subprocess_run_background: wrote: /app/eda.work/aa4539b5-85c5-42bc-a9f6-6f19112981d3.edacmd/eda.work/tb_llm_memory_controller_comparison.sim/sim.log
+INFO: [EDA] Tool - verilator, total counts: 0 tool warnings, 0 tool errors
+INFO: [EDA] sim - verilator - tb_llm_memory_controller_comparison: No errors observed.
+INFO: [EDA] Closing logfile: eda.work/eda.log
+INFO: [EDA] Wrote artifacts JSON: eda.work/tb_llm_memory_controller_comparison.sim/artifacts.json
+INFO: [EDA] Exiting with 0 warnings, 0 errors
