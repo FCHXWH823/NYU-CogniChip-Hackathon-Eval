@@ -1,0 +1,15 @@
+# DEPS.yml
+# Dependency configuration for RV32I single-cycle CPU simulation
+
+# Main simulation target
+sim_cpu:
+  deps:
+    - alu.sv
+    - control_unit.sv
+    - imm_gen.sv
+    - regfile.sv
+    - cpu_top.sv
+    - mem_model.sv
+    - golden_rv32i.sv
+    - tb_cpu.sv
+  top: tb_cpu
