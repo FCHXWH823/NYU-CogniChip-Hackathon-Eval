@@ -1,0 +1,13 @@
+TEST START
+LOG: Test 1 - Reset check
+LOG: Test 2 - Count UP reached 7
+LOG: Test 3 - UP wrap 7→0
+LOG: Test 4 - DOWN wrap 0→7
+LOG: Test 5 - Count DOWN reached 0
+LOG: Test 6 - Enable=0 holds
+LOG: Test 7 - Reset mid-count
+TEST PASSED
+- /Users/bhanujakarumuru/Downloads/RTL_Automation_updated/test/up_down_counter_tb.sv:123: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.044 2026-01-01
+- Verilator: $finish at 3ns; walltime 0.000 s; speed 17.219 us/s
+- Verilator: cpu 0.000 s on 1 threads; alloced 2 MB

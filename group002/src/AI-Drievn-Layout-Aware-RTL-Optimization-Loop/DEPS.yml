@@ -1,0 +1,69 @@
+# =============================================================================
+# RTL Automation Pipeline — Dependency Configuration
+# =============================================================================
+
+# ── Tool dependencies ─────────────────────────────────────────────────────────
+tools:
+  verilator:
+    required: true
+    version: ">=5.0"
+    install:
+      mac:   "brew install verilator"
+      linux: "apt install verilator"
+    purpose: "Functional RTL simulation (SystemVerilog)"
+
+  yosys:
+    required: false
+    version: ">=0.30"
+    install:
+      mac:   "brew install yosys"
+      linux: "apt install yosys"
+    purpose: "Gate-level pre-synthesis checks + netlist generation for STA"
+
+  opensta:
+    required: false
+    version: ">=2.6"
+    binary_names: ["sta", "opensta"]
+    install:
+      mac:   "brew install opensta"
+      linux: "bash install_opensta.sh"
+      guix:  "guix install opensta"
+      source: "https://github.com/parallaxsw/OpenSTA"
+    purpose: "Static timing analysis on the Yosys gate-level netlist"
+    notes: >
+      OpenSTA is invoked as: sta -no_init -exit  (TCL read from stdin).
+      Requires a Liberty (.lib) cell library — see liberty_file below.
+
+  python3:
+    required: true
+    version: ">=3.10"
+    purpose: "Pipeline orchestration script"
+
+# ── Liberty file for OpenSTA ──────────────────────────────────────────────────
+liberty_file:
+  default: "NanGate45 (auto-downloaded on first run)"
+  cache:   "~/.cache/rtl_autofix/nangate45.lib"
+  source:  "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts"
+  override:
+    env_var: "LIBERTY_PATH"
+    cli_flag: "--liberty /path/to/your.lib"
+
+# ── BCD Counter Design-Under-Test ─────────────────────────────────────────────
+dut_bcd:
+  deps:
+    - count.sv
+
+# ── BCD Counter Testbench ─────────────────────────────────────────────────────
+bench_bcd:
+  deps:
+    - count.sv
+    - count_tb.sv
+  top: tb_bcd_counter
+  waves:
+    dump.vcd:
+      signals:
+        - tb_bcd_counter.clock
+        - tb_bcd_counter.reset
+        - tb_bcd_counter.enable
+        - tb_bcd_counter.dut.bcd_count[3:0]
+        - tb_bcd_counter.dut.carry_out

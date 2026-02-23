@@ -1,0 +1,29 @@
+{
+  "run_id": "20260220_224804",
+  "top_module": "tb_up_down_counter",
+  "rtl_file": "up_down_counter.sv",
+  "tb_file": "up_down_counter_tb.sv",
+  "total_iterations": 3,
+  "final_status": "PASSED",
+  "clock_period_ns": 5.0,
+  "verilator": {
+    "phase": "sim",
+    "passed": true,
+    "errors": []
+  },
+  "yosys": {
+    "ran": true,
+    "clean": true,
+    "blocking": [],
+    "warnings": [],
+    "stats": []
+  },
+  "opensta": {
+    "ran": false,
+    "clean": null,
+    "wns_ns": null,
+    "tns_ns": null,
+    "wns_threshold": -0.1
+  },
+  "timestamp": "2026-02-20T22:49:47.890001"
+}
