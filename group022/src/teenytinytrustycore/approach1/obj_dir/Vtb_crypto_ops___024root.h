@@ -1,0 +1,453 @@
+// Verilated -*- C++ -*-
+// DESCRIPTION: Verilator output: Design internal header
+// See Vtb_crypto_ops.h for the primary calling header
+
+#ifndef VERILATED_VTB_CRYPTO_OPS___024ROOT_H_
+#define VERILATED_VTB_CRYPTO_OPS___024ROOT_H_  // guard
+
+#include "verilated.h"
+#include "verilated_timing.h"
+
+
+class Vtb_crypto_ops__Syms;
+
+class alignas(VL_CACHE_LINE_BYTES) Vtb_crypto_ops___024root final : public VerilatedModule {
+  public:
+
+    // DESIGN SPECIFIC STATE
+    // Anonymous structures to workaround compiler member-count bugs
+    struct {
+        CData/*0:0*/ tb_crypto_ops__DOT__clock;
+        CData/*0:0*/ tb_crypto_ops__DOT__reset;
+        CData/*0:0*/ tb_crypto_ops__DOT__system_init;
+        CData/*0:0*/ tb_crypto_ops__DOT__derive_new_keys;
+        CData/*0:0*/ tb_crypto_ops__DOT__zeroize_all;
+        CData/*0:0*/ tb_crypto_ops__DOT__puf_dus_enroll;
+        CData/*0:0*/ tb_crypto_ops__DOT__puf_dus_regenerate;
+        CData/*0:0*/ tb_crypto_ops__DOT__puf_devid_enroll;
+        CData/*0:0*/ tb_crypto_ops__DOT__puf_devid_read;
+        CData/*0:0*/ tb_crypto_ops__DOT__sha_start;
+        CData/*0:0*/ tb_crypto_ops__DOT__sha_init;
+        CData/*0:0*/ tb_crypto_ops__DOT__hmac_start;
+        CData/*0:0*/ tb_crypto_ops__DOT__hmac_init;
+        CData/*0:0*/ tb_crypto_ops__DOT__hmac_final;
+        CData/*0:0*/ tb_crypto_ops__DOT__aes_start;
+        CData/*0:0*/ tb_crypto_ops__DOT__aes_init;
+        CData/*0:0*/ tb_crypto_ops__DOT__test_passed;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_derive;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__key_dist_enable;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__key_dist_zeroize;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_key_valid_internal;
+        CData/*3:0*/ tb_crypto_ops__DOT__dut__DOT__init_state;
+        CData/*3:0*/ tb_crypto_ops__DOT__dut__DOT__init_next_state;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__dus_valid_latched;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__enroll_mode_latched;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_keys_valid_latched;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_enroll_internal;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_regenerate_internal;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__puf_devid_enroll_internal;
+        CData/*2:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_inst__DOT__state;
+        CData/*2:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_inst__DOT__next_state;
+        CData/*7:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_inst__DOT__measure_cycles;
+        CData/*7:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_inst__DOT__cycle_count;
+        CData/*7:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_inst__DOT__error_count;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_inst__DOT__unnamedblk1__DOT__unnamedblk2__DOT__core_bit;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_inst__DOT__unnamedblk1__DOT__unnamedblk2__DOT__noise_bit;
+        CData/*1:0*/ tb_crypto_ops__DOT__dut__DOT__puf_devid_inst__DOT__state;
+        CData/*1:0*/ tb_crypto_ops__DOT__dut__DOT__puf_devid_inst__DOT__next_state;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__puf_devid_inst__DOT__enrolled;
+        CData/*7:0*/ tb_crypto_ops__DOT__dut__DOT__puf_devid_inst__DOT__measure_count;
+        CData/*3:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__state;
+        CData/*3:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__next_state;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_start;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_init;
+        CData/*2:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__block_count;
+        CData/*1:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__state;
+        CData/*1:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__next_state;
+        CData/*5:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__round;
+        CData/*5:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__round_next;
+        CData/*2:0*/ tb_crypto_ops__DOT__dut__DOT__key_dist_inst__DOT__state;
+        CData/*2:0*/ tb_crypto_ops__DOT__dut__DOT__key_dist_inst__DOT__next_state;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__key_dist_inst__DOT__keys_valid_reg;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__key_dist_inst__DOT__keys_locked;
+        CData/*7:0*/ tb_crypto_ops__DOT__dut__DOT__key_dist_inst__DOT__integrity_counter;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__key_dist_inst__DOT__integrity_fail;
+        CData/*2:0*/ tb_crypto_ops__DOT__dut__DOT__key_dist_inst__DOT___Vpast_4_0;
+        CData/*1:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__state;
+        CData/*1:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__next_state;
+        CData/*5:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__round;
+        CData/*5:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__round_next;
+        CData/*2:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__state;
+        CData/*2:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__next_state;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_start;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_init;
+    };
+    struct {
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__first_message_block;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__is_final_block;
+        CData/*1:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__state;
+        CData/*1:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__next_state;
+        CData/*5:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__round;
+        CData/*5:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__round_next;
+        CData/*2:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__state;
+        CData/*2:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__next_state;
+        CData/*3:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__round;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__init_latched;
+        CData/*2:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__key_exp_stage;
+        CData/*0:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__keys_packed;
+        CData/*7:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__unnamedblk10__DOT__unnamedblk13__DOT__unnamedblk14__DOT__a;
+        CData/*7:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__unnamedblk10__DOT__unnamedblk13__DOT__unnamedblk14__DOT__b;
+        CData/*7:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__unnamedblk10__DOT__unnamedblk13__DOT__unnamedblk14__DOT__c;
+        CData/*7:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__unnamedblk10__DOT__unnamedblk13__DOT__unnamedblk14__DOT__d;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul2__56__Vfuncout;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul2__56__a;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul3__57__Vfuncout;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul3__57__a;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul2__58__Vfuncout;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul2__58__a;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul2__59__Vfuncout;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul2__59__a;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul3__60__Vfuncout;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul3__60__a;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul2__61__Vfuncout;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul2__61__a;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul2__62__Vfuncout;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul2__62__a;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul3__63__Vfuncout;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul3__63__a;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul2__64__Vfuncout;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul2__64__a;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul3__65__Vfuncout;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul3__65__a;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul2__66__Vfuncout;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul2__66__a;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul2__67__Vfuncout;
+        CData/*7:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__gmul2__67__a;
+        CData/*2:0*/ __Vsampled_TOP__tb_crypto_ops__DOT__dut__DOT__key_dist_inst__DOT__state;
+        CData/*0:0*/ __VstlFirstIteration;
+        CData/*0:0*/ __Vtrigprevexpr___TOP__tb_crypto_ops__DOT__clock__0;
+        CData/*0:0*/ __Vtrigprevexpr___TOP__tb_crypto_ops__DOT__reset__0;
+        CData/*0:0*/ __VactContinue;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__puf_dus_helper_in;
+        VlWide<16>/*511:0*/ tb_crypto_ops__DOT__sha_message;
+        VlWide<16>/*511:0*/ tb_crypto_ops__DOT__hmac_message;
+        VlWide<4>/*127:0*/ tb_crypto_ops__DOT__aes_nonce;
+        VlWide<4>/*127:0*/ tb_crypto_ops__DOT__aes_data_in;
+        IData/*31:0*/ tb_crypto_ops__DOT__cycle_count;
+        IData/*31:0*/ tb_crypto_ops__DOT__error_count;
+        IData/*31:0*/ tb_crypto_ops__DOT__test_count;
+        IData/*31:0*/ tb_crypto_ops__DOT__pass_count;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_context;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_key_internal;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__aes_key_internal;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_inst__DOT__puf_raw;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_inst__DOT__puf_enrolled;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_inst__DOT__helper_data_reg;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_inst__DOT__secret_reg;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_inst__DOT__ro_frequencies;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_inst__DOT__lfsr_noise;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_inst__DOT__unnamedblk1__DOT__i;
+    };
+    struct {
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_inst__DOT__unnamedblk3__DOT__corrected_puf;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_inst__DOT__unnamedblk3__DOT__syndrome;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_inst__DOT__unnamedblk4__DOT__syndrome;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__puf_dus_inst__DOT__unnamedblk4__DOT__unnamedblk5__DOT__i;
+        VlWide<4>/*127:0*/ tb_crypto_ops__DOT__dut__DOT__puf_devid_inst__DOT__device_id_reg;
+        VlWide<4>/*127:0*/ tb_crypto_ops__DOT__dut__DOT__puf_devid_inst__DOT__puf_measurement;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__puf_devid_inst__DOT__lfsr;
+        VlWide<4>/*127:0*/ tb_crypto_ops__DOT__dut__DOT__puf_devid_inst__DOT__unnamedblk1__DOT__current_sample;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__puf_devid_inst__DOT__unnamedblk1__DOT__unnamedblk2__DOT__i;
+        VlWide<4>/*127:0*/ tb_crypto_ops__DOT__dut__DOT__puf_devid_inst__DOT__unnamedblk3__DOT__mixed_id;
+        VlWide<16>/*511:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_message;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_hash;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__prk;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__t_prev;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__hmac_key_reg;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__aes_key_reg;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_key_reg;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__ipad_key;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__opad_key;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__inner_hash;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__a;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__b;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__c;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__d;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__e;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__f;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__g;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__h;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__a_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__b_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__c_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__d_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__e_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__f_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__g_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__h_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__T1;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__T2;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__unnamedblk1__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__unnamedblk2__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__unnamedblk4__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__unnamedblk5__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__unnamedblk6__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__unnamedblk7__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__unnamedblk9__DOT__i;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__key_dist_inst__DOT__hmac_key_reg;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__key_dist_inst__DOT__aes_key_reg;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__key_dist_inst__DOT__sha_key_reg;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__key_dist_inst__DOT___Vpast_6_0;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__key_dist_inst__DOT___Vpast_8_0;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__key_dist_inst__DOT___Vpast_10_0;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__a;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__b;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__c;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__d;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__e;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__f;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__g;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__h;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__a_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__b_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__c_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__d_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__e_next;
+    };
+    struct {
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__f_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__g_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__h_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__T1;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__T2;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__unnamedblk1__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__unnamedblk2__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__unnamedblk4__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__unnamedblk5__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__unnamedblk6__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__unnamedblk7__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__unnamedblk9__DOT__i;
+        VlWide<16>/*511:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_message;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_hash;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__inner_hash;
+        VlWide<8>/*255:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__mac_reg;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__a;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__b;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__c;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__d;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__e;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__f;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__g;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__h;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__a_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__b_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__c_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__d_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__e_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__f_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__g_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__h_next;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__T1;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__T2;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__unnamedblk1__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__unnamedblk2__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__unnamedblk4__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__unnamedblk5__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__unnamedblk6__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__unnamedblk7__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__unnamedblk9__DOT__i;
+        VlWide<4>/*127:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__counter;
+        VlWide<4>/*127:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__counter_block;
+        VlWide<4>/*127:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__keystream;
+        VlWide<4>/*127:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__data_out_reg;
+        VlWide<4>/*127:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__aes_output;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__unnamedblk1__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__unnamedblk2__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__unnamedblk3__DOT__r;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__unnamedblk4__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__unnamedblk4__DOT__unnamedblk5__DOT__j;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__unnamedblk6__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__unnamedblk7__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__unnamedblk7__DOT__unnamedblk8__DOT__j;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__unnamedblk9__DOT__i;
+        IData/*31:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__unnamedblk10__DOT__unnamedblk13__DOT__j;
+        VlWide<4>/*127:0*/ tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT____Vlvbound_ha0707f26__0;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__gamma1__8__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__gamma1__8__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__9__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__9__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__10__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__10__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__gamma0__11__Vfuncout;
+    };
+    struct {
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__gamma0__11__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__12__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__12__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__13__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__13__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__sigma1__14__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__sigma1__14__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__15__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__15__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__16__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__16__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__17__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__17__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__ch__18__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__ch__18__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__ch__18__y;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__ch__18__z;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__sigma0__19__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__sigma0__19__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__20__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__20__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__21__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__21__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__22__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__rotr__22__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__maj__23__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__maj__23__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__maj__23__y;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__maj__23__z;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__gamma1__24__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__gamma1__24__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__25__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__25__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__26__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__26__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__gamma0__27__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__gamma0__27__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__28__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__28__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__29__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__29__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__sigma1__30__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__sigma1__30__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__31__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__31__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__32__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__32__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__33__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__33__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__ch__34__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__ch__34__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__ch__34__y;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__ch__34__z;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__sigma0__35__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__sigma0__35__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__36__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__36__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__37__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__37__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__38__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__rotr__38__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__maj__39__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__maj__39__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__maj__39__y;
+    };
+    struct {
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__maj__39__z;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__gamma1__40__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__gamma1__40__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__41__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__41__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__42__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__42__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__gamma0__43__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__gamma0__43__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__44__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__44__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__45__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__45__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__sigma1__46__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__sigma1__46__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__47__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__47__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__48__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__48__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__49__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__49__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__ch__50__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__ch__50__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__ch__50__y;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__ch__50__z;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__sigma0__51__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__sigma0__51__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__52__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__52__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__53__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__53__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__54__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__rotr__54__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__maj__55__Vfuncout;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__maj__55__x;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__maj__55__y;
+        IData/*31:0*/ __Vfunc_tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__maj__55__z;
+        VlWide<8>/*255:0*/ __Vsampled_TOP__tb_crypto_ops__DOT__dut__DOT__key_dist_inst__DOT__hmac_key_reg;
+        VlWide<8>/*255:0*/ __Vsampled_TOP__tb_crypto_ops__DOT__dut__DOT__key_dist_inst__DOT__aes_key_reg;
+        VlWide<8>/*255:0*/ __Vsampled_TOP__tb_crypto_ops__DOT__dut__DOT__key_dist_inst__DOT__sha_key_reg;
+        IData/*31:0*/ __VactIterCount;
+        QData/*63:0*/ tb_crypto_ops__DOT__aes_counter_init;
+        VlUnpacked<IData/*31:0*/, 64> tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__K;
+        VlUnpacked<IData/*31:0*/, 8> tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__H;
+        VlUnpacked<IData/*31:0*/, 8> tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__H_next;
+        VlUnpacked<IData/*31:0*/, 64> tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__W;
+        VlUnpacked<IData/*31:0*/, 64> tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__W_next;
+        VlUnpacked<IData/*31:0*/, 64> tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__K;
+        VlUnpacked<IData/*31:0*/, 8> tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__H;
+        VlUnpacked<IData/*31:0*/, 8> tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__H_next;
+        VlUnpacked<IData/*31:0*/, 64> tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__W;
+        VlUnpacked<IData/*31:0*/, 64> tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__W_next;
+        VlUnpacked<IData/*31:0*/, 64> tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__K;
+        VlUnpacked<IData/*31:0*/, 8> tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__H;
+        VlUnpacked<IData/*31:0*/, 8> tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__H_next;
+        VlUnpacked<IData/*31:0*/, 64> tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__W;
+        VlUnpacked<IData/*31:0*/, 64> tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__W_next;
+        VlUnpacked<CData/*7:0*/, 256> tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__sbox;
+        VlUnpacked<CData/*7:0*/, 15> tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__rcon;
+        VlUnpacked<VlUnpacked<CData/*7:0*/, 4>, 4> tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__aes_state;
+        VlUnpacked<VlUnpacked<CData/*7:0*/, 4>, 4> tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__aes_state_next;
+        VlUnpacked<VlWide<4>/*127:0*/, 15> tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__round_keys;
+        VlUnpacked<IData/*31:0*/, 60> tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__w;
+        VlUnpacked<VlUnpacked<CData/*7:0*/, 4>, 4> tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__unnamedblk10__DOT__after_subbytes;
+    };
+    struct {
+        VlUnpacked<VlUnpacked<CData/*7:0*/, 4>, 4> tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__unnamedblk10__DOT__after_shiftrows;
+        VlUnpacked<VlUnpacked<CData/*7:0*/, 4>, 4> tb_crypto_ops__DOT__dut__DOT__aes_inst__DOT__unnamedblk10__DOT__after_mixcol;
+        VlUnpacked<CData/*0:0*/, 7> __Vm_traceActivity;
+    };
+    VlDelayScheduler __VdlySched;
+    VlTriggerScheduler __VtrigSched_h9a0751a7__0;
+    VlTriggerVec<1> __VstlTriggered;
+    VlTriggerVec<3> __VactTriggered;
+    VlTriggerVec<3> __VnbaTriggered;
+
+    // INTERNAL VARIABLES
+    Vtb_crypto_ops__Syms* const vlSymsp;
+
+    // PARAMETERS
+    static constexpr VlUnpacked<IData/*31:0*/, 8> tb_crypto_ops__DOT__dut__DOT__kdf_inst__DOT__sha_inst__DOT__H0_INIT = {{
+        0x6a09e667U, 0xbb67ae85U, 0x3c6ef372U, 0xa54ff53aU,
+        0x510e527fU, 0x9b05688cU, 0x1f83d9abU, 0x5be0cd19U
+    }};
+    static constexpr VlUnpacked<IData/*31:0*/, 8> tb_crypto_ops__DOT__dut__DOT__sha_inst__DOT__H0_INIT = {{
+        0x6a09e667U, 0xbb67ae85U, 0x3c6ef372U, 0xa54ff53aU,
+        0x510e527fU, 0x9b05688cU, 0x1f83d9abU, 0x5be0cd19U
+    }};
+    static constexpr VlUnpacked<IData/*31:0*/, 8> tb_crypto_ops__DOT__dut__DOT__hmac_inst__DOT__sha_inst__DOT__H0_INIT = {{
+        0x6a09e667U, 0xbb67ae85U, 0x3c6ef372U, 0xa54ff53aU,
+        0x510e527fU, 0x9b05688cU, 0x1f83d9abU, 0x5be0cd19U
+    }};
+
+    // CONSTRUCTORS
+    Vtb_crypto_ops___024root(Vtb_crypto_ops__Syms* symsp, const char* v__name);
+    ~Vtb_crypto_ops___024root();
+    VL_UNCOPYABLE(Vtb_crypto_ops___024root);
+
+    // INTERNAL METHODS
+    void __Vconfigure(bool first);
+};
+
+
+#endif  // guard

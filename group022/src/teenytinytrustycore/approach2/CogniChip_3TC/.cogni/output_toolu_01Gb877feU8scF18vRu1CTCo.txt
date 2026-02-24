@@ -1,0 +1,8 @@
+=== Command: cd testbenches && make -f Makefile.icarus clean (2026-02-21T00:51:19.395Z) ===
+Exit Code: 0
+Output:
+rm -f *.vvp *.vcd *.log
+Cleaned all generated files
+
+=== End Output ===
+

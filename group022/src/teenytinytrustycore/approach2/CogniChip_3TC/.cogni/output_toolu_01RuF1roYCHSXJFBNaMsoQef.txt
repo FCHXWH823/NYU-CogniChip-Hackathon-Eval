@@ -1,0 +1,46 @@
+=== Command: cd testbenches && make -f Makefile.icarus test_dus_storage (2026-02-20T23:34:55.073Z) ===
+Exit Code: 0
+Output:
+iverilog -g2012 -Wall -o tb_ttc3_dus_storage.vvp ./tb_ttc3_dus_storage.sv ../ttc3_dus_storage.sv
+./tb_ttc3_dus_storage.sv:78: warning: extra digits given for sized hex constant.
+./tb_ttc3_dus_storage.sv:78: warning: Numeric constant truncated to 256 bits.
+../ttc3_dus_storage.sv:21: warning: timescale for ttc3_dus_storage inherited from another file.
+./tb_ttc3_dus_storage.sv:10: ...: The inherited timescale is here.
+=========================================
+Running DUS Storage Test
+=========================================
+vvp  tb_ttc3_dus_storage.vvp
+VCD info: dumpfile tb_ttc3_dus_storage.vcd opened for output.
+TEST START
+========================================
+Testing TTC3 DUS Storage Module
+========================================
+
+Test 1: Write DUS and check valid flag
+  PASS: DUS valid flag asserted
+
+Test 2: Attempt to re-write DUS (should be locked)
+  PASS: DUS remains locked (write-once behavior)
+
+Test 3: KDF output without request
+  PASS: KDF DUS is zero when not requested
+
+Test 4: KDF request grants access
+  FAIL: KDF DUS mismatch
+
+Test 5: Reset clears DUS
+  PASS: DUS cleared and not valid after reset
+
+========================================
+TEST SUMMARY
+========================================
+Total Tests: 5
+Errors:      1
+TEST FAILED
+========================================
+
+Waveform saved to: tb_ttc3_dus_storage.vcd
+View with: make wave_dus_storage
+
+=== End Output ===
+

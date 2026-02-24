@@ -1,0 +1,151 @@
+=== Command: cd testbenches && make -f Makefile.icarus test_all 2>&1 (2026-02-21T00:51:31.655Z) ===
+Exit Code: 0
+Output:
+iverilog -g2012 -Wall -o tb_ttc3_dus_storage.vvp ./tb_ttc3_dus_storage.sv ../ttc3_dus_storage.sv
+./tb_ttc3_dus_storage.sv:79: warning: extra digits given for sized hex constant.
+./tb_ttc3_dus_storage.sv:79: warning: Numeric constant truncated to 256 bits.
+../ttc3_dus_storage.sv:21: warning: timescale for ttc3_dus_storage inherited from another file.
+./tb_ttc3_dus_storage.sv:10: ...: The inherited timescale is here.
+=========================================
+Running DUS Storage Test
+=========================================
+vvp  tb_ttc3_dus_storage.vvp
+VCD info: dumpfile tb_ttc3_dus_storage.vcd opened for output.
+TEST START
+========================================
+Testing TTC3 DUS Storage Module
+========================================
+
+Test 1: Write DUS and check valid flag
+  PASS: DUS valid flag asserted
+
+Test 2: Attempt to re-write DUS (should be locked)
+  PASS: DUS remains locked (write-once behavior)
+
+Test 3: KDF output without request
+  PASS: KDF DUS is zero when not requested
+
+Test 4: KDF request grants access
+  PASS: KDF receives correct DUS when requested
+
+Test 5: Reset clears DUS
+  PASS: DUS cleared and not valid after reset
+
+========================================
+TEST SUMMARY
+========================================
+Total Tests: 5
+Errors:      0
+TEST PASSED
+========================================
+
+Waveform saved to: tb_ttc3_dus_storage.vcd
+View with: make wave_dus_storage
+iverilog -g2012 -Wall -o tb_ttc3_device_id.vvp ./tb_ttc3_device_id.sv ../ttc3_device_id.sv
+../ttc3_device_id.sv:18: warning: timescale for ttc3_device_id inherited from another file.
+./tb_ttc3_device_id.sv:10: ...: The inherited timescale is here.
+=========================================
+Running Device ID Test
+=========================================
+vvp  tb_ttc3_device_id.vvp
+VCD info: dumpfile tb_ttc3_device_id.vcd opened for output.
+TEST START
+========================================
+Testing TTC3 Device ID Module
+========================================
+
+Test 1: Device ID valid after reset
+  PASS: ID valid flag is asserted
+  Device ID: 0xdeadbeefcafebabe0123456789abcdef
+
+Test 2: Device ID is non-zero
+  PASS: Device ID is non-zero
+
+Test 3: Device ID immutability
+  PASS: Device ID remained constant
+
+Test 4: Fuse input overrides default
+  PASS: Fuse value correctly loaded
+  Device ID: 0x123456789abcdef0fedcba9876543210
+
+Test 5: New ID is also immutable
+  PASS: New Device ID remained constant
+
+========================================
+TEST SUMMARY
+========================================
+Total Tests: 5
+Errors:      0
+TEST PASSED
+========================================
+
+Waveform saved to: tb_ttc3_device_id.vcd
+View with: make wave_device_id
+iverilog -g2012 -Wall -o tb_ttc3_top.vvp ./tb_ttc3_top.sv ../ttc3_dus_storage.sv ../ttc3_device_id.sv ../ttc3_kdf.sv ../ttc3_sha256.sv ../ttc3_hmac.sv ../ttc3_aes_ctr.sv ../ttc3_top.sv
+./tb_ttc3_top.sv:141: warning: extra digits given for sized hex constant.
+./tb_ttc3_top.sv:141: warning: Numeric constant truncated to 256 bits.
+./tb_ttc3_top.sv:186: warning: Static variable initialization requires explicit lifetime in this context.
+./tb_ttc3_top.sv:206: warning: Static variable initialization requires explicit lifetime in this context.
+./tb_ttc3_top.sv:226: warning: Static variable initialization requires explicit lifetime in this context.
+./tb_ttc3_top.sv:227: warning: Static variable initialization requires explicit lifetime in this context.
+./tb_ttc3_top.sv:228: warning: Static variable initialization requires explicit lifetime in this context.
+../ttc3_dus_storage.sv:21: warning: timescale for ttc3_dus_storage inherited from another file.
+./tb_ttc3_top.sv:13: ...: The inherited timescale is here.
+../ttc3_device_id.sv:18: warning: timescale for ttc3_device_id inherited from another file.
+./tb_ttc3_top.sv:13: ...: The inherited timescale is here.
+../ttc3_kdf.sv:23: warning: timescale for ttc3_kdf inherited from another file.
+./tb_ttc3_top.sv:13: ...: The inherited timescale is here.
+../ttc3_sha256.sv:20: warning: timescale for ttc3_sha256 inherited from another file.
+./tb_ttc3_top.sv:13: ...: The inherited timescale is here.
+../ttc3_hmac.sv:19: warning: timescale for ttc3_hmac inherited from another file.
+./tb_ttc3_top.sv:13: ...: The inherited timescale is here.
+../ttc3_aes_ctr.sv:21: warning: timescale for ttc3_aes_ctr inherited from another file.
+./tb_ttc3_top.sv:13: ...: The inherited timescale is here.
+../ttc3_top.sv:24: warning: timescale for ttc3_top inherited from another file.
+./tb_ttc3_top.sv:13: ...: The inherited timescale is here.
+../ttc3_kdf.sv:96: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../ttc3_kdf.sv:96: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../ttc3_top.sv:212: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../ttc3_top.sv:212: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../ttc3_top.sv:212: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../ttc3_top.sv:212: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../ttc3_hmac.sv:85: warning: always_comb process has no sensitivities.
+=========================================
+Running Top-Level Integration Test
+=========================================
+vvp  tb_ttc3_top.vvp
+VCD info: dumpfile tb_ttc3_top.vcd opened for output.
+TEST START
+========================================
+Testing TTC3 Top-Level Integration
+========================================
+
+Test 1: Initialize Device Unique Secret
+  Initializing DUS...
+  DUS initialized
+  PASS: DUS initialization completed
+
+Test 2: Get Device ID
+  PASS: Device ID retrieved
+  Device ID: 0xdeadbeefcafebabe0123456789abcdef
+
+Test 3: Device ID Immutability
+  PASS: Device ID is immutable
+
+Test 4: SHA-256 Hash Operation
+  PASS: SHA-256 hash computed
+  Hash (first 64 bits): 0xda5698be17b9b469
+
+Test 5: HMAC-SHA256 Operation
+ERROR: Simulation timeout!
+TEST FAILED
+
+Waveform saved to: tb_ttc3_top.vcd
+View with: make wave_top
+
+=========================================
+ALL TESTS COMPLETED
+=========================================
+
+=== End Output ===
+

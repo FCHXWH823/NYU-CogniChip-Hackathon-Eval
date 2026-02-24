@@ -1,0 +1,90 @@
+# ===========================================================================
+# TTC3 DEPS.yml - Simulation Targets
+# ===========================================================================
+# This file defines simulation targets for CogniChip simulation tool
+# 
+# Usage:
+#   Right-click on this file → "Run Simulation" → Select target
+#
+# Available targets:
+#   - bench_ttc3_top: Full integration test (8 tests)
+#   - bench_ttc3_dus_storage: DUS storage module test (5 tests)
+#   - bench_ttc3_device_id: Device ID module test (5 tests)
+# ===========================================================================
+
+# ===========================================================================
+# Target 1: Top-Level Integration Test
+# ===========================================================================
+bench_ttc3_top:
+  deps:
+    - ttc3_dus_storage.sv
+    - ttc3_device_id.sv
+    - ttc3_kdf.sv
+    - ttc3_sha256.sv
+    - ttc3_hmac.sv
+    - ttc3_aes_ctr.sv
+    - ttc3_top.sv
+    - testbenches/tb_ttc3_top.sv
+  top: tb_ttc3_top
+
+# ===========================================================================
+# Target 2: DUS Storage Module Test
+# ===========================================================================
+bench_ttc3_dus_storage:
+  deps:
+    - ttc3_dus_storage.sv
+    - testbenches/tb_ttc3_dus_storage.sv
+  top: tb_ttc3_dus_storage
+
+# ===========================================================================
+# Target 3: Device ID Module Test
+# ===========================================================================
+bench_ttc3_device_id:
+  deps:
+    - ttc3_device_id.sv
+    - testbenches/tb_ttc3_device_id.sv
+  top: tb_ttc3_device_id
+
+# ===========================================================================
+# Individual RTL Modules (for reference/linting only)
+# ===========================================================================
+dut_ttc3_top:
+  deps:
+    - ttc3_dus_storage.sv
+    - ttc3_device_id.sv
+    - ttc3_kdf.sv
+    - ttc3_sha256.sv
+    - ttc3_hmac.sv
+    - ttc3_aes_ctr.sv
+    - ttc3_top.sv
+  top: ttc3_top
+
+dut_ttc3_dus_storage:
+  deps:
+    - ttc3_dus_storage.sv
+  top: ttc3_dus_storage
+
+dut_ttc3_device_id:
+  deps:
+    - ttc3_device_id.sv
+  top: ttc3_device_id
+
+dut_ttc3_kdf:
+  deps:
+    - ttc3_kdf.sv
+  top: ttc3_kdf
+
+dut_ttc3_sha256:
+  deps:
+    - ttc3_sha256.sv
+  top: ttc3_sha256
+
+dut_ttc3_hmac:
+  deps:
+    - ttc3_hmac.sv
+  top: ttc3_hmac
+
+dut_ttc3_aes_ctr:
+  deps:
+    - ttc3_aes_ctr.sv
+  top: ttc3_aes_ctr

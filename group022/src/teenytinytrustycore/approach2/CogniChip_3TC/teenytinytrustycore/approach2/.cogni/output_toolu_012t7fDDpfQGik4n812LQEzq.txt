@@ -1,0 +1,36 @@
+=== Command: cd testbenches && make -f Makefile.icarus test_dus_storage 2>&1 | grep -A 30 "TEST START" (2026-02-21T00:51:44.158Z) ===
+Exit Code: 0
+Output:
+TEST START
+========================================
+Testing TTC3 DUS Storage Module
+========================================
+
+Test 1: Write DUS and check valid flag
+  PASS: DUS valid flag asserted
+
+Test 2: Attempt to re-write DUS (should be locked)
+  PASS: DUS remains locked (write-once behavior)
+
+Test 3: KDF output without request
+  PASS: KDF DUS is zero when not requested
+
+Test 4: KDF request grants access
+  PASS: KDF receives correct DUS when requested
+
+Test 5: Reset clears DUS
+  PASS: DUS cleared and not valid after reset
+
+========================================
+TEST SUMMARY
+========================================
+Total Tests: 5
+Errors:      0
+TEST PASSED
+========================================
+
+Waveform saved to: tb_ttc3_dus_storage.vcd
+View with: make wave_dus_storage
+
+=== End Output ===
+

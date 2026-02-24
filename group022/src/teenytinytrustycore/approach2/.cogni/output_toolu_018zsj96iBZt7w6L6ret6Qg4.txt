@@ -1,0 +1,67 @@
+=== Command: cd testbenches && make -f Makefile.icarus test_top 2>&1 | head -100 (2026-02-20T23:35:19.808Z) ===
+Exit Code: 0
+Output:
+iverilog -g2012 -Wall -o tb_ttc3_top.vvp ./tb_ttc3_top.sv ../ttc3_dus_storage.sv ../ttc3_device_id.sv ../ttc3_kdf.sv ../ttc3_sha256.sv ../ttc3_hmac.sv ../ttc3_aes_ctr.sv ../ttc3_top.sv
+./tb_ttc3_top.sv:141: warning: extra digits given for sized hex constant.
+./tb_ttc3_top.sv:141: warning: Numeric constant truncated to 256 bits.
+./tb_ttc3_top.sv:186: warning: Static variable initialization requires explicit lifetime in this context.
+./tb_ttc3_top.sv:206: warning: Static variable initialization requires explicit lifetime in this context.
+./tb_ttc3_top.sv:226: warning: Static variable initialization requires explicit lifetime in this context.
+./tb_ttc3_top.sv:227: warning: Static variable initialization requires explicit lifetime in this context.
+./tb_ttc3_top.sv:228: warning: Static variable initialization requires explicit lifetime in this context.
+../ttc3_dus_storage.sv:21: warning: timescale for ttc3_dus_storage inherited from another file.
+./tb_ttc3_top.sv:13: ...: The inherited timescale is here.
+../ttc3_device_id.sv:18: warning: timescale for ttc3_device_id inherited from another file.
+./tb_ttc3_top.sv:13: ...: The inherited timescale is here.
+../ttc3_kdf.sv:23: warning: timescale for ttc3_kdf inherited from another file.
+./tb_ttc3_top.sv:13: ...: The inherited timescale is here.
+../ttc3_sha256.sv:20: warning: timescale for ttc3_sha256 inherited from another file.
+./tb_ttc3_top.sv:13: ...: The inherited timescale is here.
+../ttc3_hmac.sv:19: warning: timescale for ttc3_hmac inherited from another file.
+./tb_ttc3_top.sv:13: ...: The inherited timescale is here.
+../ttc3_aes_ctr.sv:21: warning: timescale for ttc3_aes_ctr inherited from another file.
+./tb_ttc3_top.sv:13: ...: The inherited timescale is here.
+../ttc3_top.sv:24: warning: timescale for ttc3_top inherited from another file.
+./tb_ttc3_top.sv:13: ...: The inherited timescale is here.
+../ttc3_kdf.sv:96: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../ttc3_kdf.sv:96: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../ttc3_top.sv:212: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../ttc3_top.sv:212: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../ttc3_top.sv:212: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../ttc3_top.sv:212: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../ttc3_hmac.sv:85: warning: always_comb process has no sensitivities.
+=========================================
+Running Top-Level Integration Test
+=========================================
+vvp  tb_ttc3_top.vvp
+VCD info: dumpfile tb_ttc3_top.vcd opened for output.
+TEST START
+========================================
+Testing TTC3 Top-Level Integration
+========================================
+
+Test 1: Initialize Device Unique Secret
+  Initializing DUS...
+  DUS initialized
+  PASS: DUS initialization completed
+
+Test 2: Get Device ID
+  PASS: Device ID retrieved
+  Device ID: 0xdeadbeefcafebabe0123456789abcdef
+
+Test 3: Device ID Immutability
+  PASS: Device ID is immutable
+
+Test 4: SHA-256 Hash Operation
+  PASS: SHA-256 hash computed
+  Hash (first 64 bits): 0xda5698be17b9b469
+
+Test 5: HMAC-SHA256 Operation
+ERROR: Simulation timeout!
+TEST FAILED
+
+Waveform saved to: tb_ttc3_top.vcd
+View with: make wave_top
+
+=== End Output ===
+

@@ -1,0 +1,6 @@
+=== Command: chmod +x testbenches/run_all_tests.sh (2026-02-20T23:12:02.439Z) ===
+Exit Code: 0
+Output:
+
+=== End Output ===
+

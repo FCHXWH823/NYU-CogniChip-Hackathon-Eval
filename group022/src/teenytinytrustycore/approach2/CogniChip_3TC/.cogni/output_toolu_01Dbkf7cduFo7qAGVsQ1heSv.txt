@@ -1,0 +1,46 @@
+=== Command: cd testbenches && make -f Makefile.icarus test_device_id (2026-02-20T23:35:07.503Z) ===
+Exit Code: 0
+Output:
+iverilog -g2012 -Wall -o tb_ttc3_device_id.vvp ./tb_ttc3_device_id.sv ../ttc3_device_id.sv
+../ttc3_device_id.sv:18: warning: timescale for ttc3_device_id inherited from another file.
+./tb_ttc3_device_id.sv:10: ...: The inherited timescale is here.
+=========================================
+Running Device ID Test
+=========================================
+vvp  tb_ttc3_device_id.vvp
+VCD info: dumpfile tb_ttc3_device_id.vcd opened for output.
+TEST START
+========================================
+Testing TTC3 Device ID Module
+========================================
+
+Test 1: Device ID valid after reset
+  PASS: ID valid flag is asserted
+  Device ID: 0xdeadbeefcafebabe0123456789abcdef
+
+Test 2: Device ID is non-zero
+  PASS: Device ID is non-zero
+
+Test 3: Device ID immutability
+  PASS: Device ID remained constant
+
+Test 4: Fuse input overrides default
+  PASS: Fuse value correctly loaded
+  Device ID: 0x123456789abcdef0fedcba9876543210
+
+Test 5: New ID is also immutable
+  PASS: New Device ID remained constant
+
+========================================
+TEST SUMMARY
+========================================
+Total Tests: 5
+Errors:      0
+TEST PASSED
+========================================
+
+Waveform saved to: tb_ttc3_device_id.vcd
+View with: make wave_device_id
+
+=== End Output ===
+

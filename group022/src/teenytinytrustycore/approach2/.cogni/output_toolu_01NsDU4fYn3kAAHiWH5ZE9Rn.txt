@@ -1,0 +1,12 @@
+=== Command: cd testbenches && ls -lh *.vcd *.vvp 2>/dev/null | head -20 (2026-02-20T23:35:29.480Z) ===
+Exit Code: 0
+Output:
+-rw-rw-r-- 1 raheel raheel 2.9K Feb 20 16:35 tb_ttc3_device_id.vcd
+-rwxr-xr-x 1 raheel raheel  12K Feb 20 16:35 tb_ttc3_device_id.vvp
+-rw-rw-r-- 1 raheel raheel 3.2K Feb 20 16:34 tb_ttc3_dus_storage.vcd
+-rwxr-xr-x 1 raheel raheel  12K Feb 20 16:34 tb_ttc3_dus_storage.vvp
+-rw-rw-r-- 1 raheel raheel 2.8M Feb 20 16:35 tb_ttc3_top.vcd
+-rwxr-xr-x 1 raheel raheel 132K Feb 20 16:35 tb_ttc3_top.vvp
+
+=== End Output ===
+

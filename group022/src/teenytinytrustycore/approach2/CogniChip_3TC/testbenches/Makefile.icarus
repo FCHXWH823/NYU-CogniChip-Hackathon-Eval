@@ -1,0 +1,150 @@
+# ===========================================================================
+# Makefile for Icarus Verilog Simulation of TTC3
+# ===========================================================================
+# Usage:
+#   make                    # Run top-level test
+#   make test_top           # Run top-level test
+#   make test_dus_storage   # Run DUS storage test
+#   make test_device_id     # Run Device ID test
+#   make test_all           # Run all tests
+#   make clean              # Clean generated files
+# ===========================================================================
+
+# Simulator
+IVERILOG = iverilog
+VVP = vvp
+GTKWAVE = gtkwave
+
+# Flags
+IVERILOG_FLAGS = -g2012 -Wall
+VVP_FLAGS = 
+
+# Directories
+RTL_DIR = ..
+TB_DIR = .
+
+# RTL Source Files
+RTL_SOURCES = \
+	$(RTL_DIR)/ttc3_dus_storage.sv \
+	$(RTL_DIR)/ttc3_device_id.sv \
+	$(RTL_DIR)/ttc3_kdf.sv \
+	$(RTL_DIR)/ttc3_sha256.sv \
+	$(RTL_DIR)/ttc3_hmac.sv \
+	$(RTL_DIR)/ttc3_aes_ctr.sv \
+	$(RTL_DIR)/ttc3_top.sv
+
+# Testbench Files
+TB_DUS_STORAGE = $(TB_DIR)/tb_ttc3_dus_storage.sv
+TB_DEVICE_ID = $(TB_DIR)/tb_ttc3_device_id.sv
+TB_TOP = $(TB_DIR)/tb_ttc3_top.sv
+
+# Output files
+OUT_DUS_STORAGE = tb_ttc3_dus_storage.vvp
+OUT_DEVICE_ID = tb_ttc3_device_id.vvp
+OUT_TOP = tb_ttc3_top.vvp
+
+# VCD files
+VCD_DUS_STORAGE = tb_ttc3_dus_storage.vcd
+VCD_DEVICE_ID = tb_ttc3_device_id.vcd
+VCD_TOP = tb_ttc3_top.vcd
+
+# ===========================================================================
+# Default target: run top-level test
+# ===========================================================================
+all: test_top
+
+# ===========================================================================
+# Individual Test Targets
+# ===========================================================================
+
+# Top-level integration test
+test_top: $(OUT_TOP)
+	@echo "========================================="
+	@echo "Running Top-Level Integration Test"
+	@echo "========================================="
+	$(VVP) $(VVP_FLAGS) $(OUT_TOP)
+	@echo ""
+	@echo "Waveform saved to: $(VCD_TOP)"
+	@echo "View with: make wave_top"
+
+$(OUT_TOP): $(RTL_SOURCES) $(TB_TOP)
+	$(IVERILOG) $(IVERILOG_FLAGS) -o $@ $(TB_TOP) $(RTL_SOURCES)
+
+# DUS Storage test
+test_dus_storage: $(OUT_DUS_STORAGE)
+	@echo "========================================="
+	@echo "Running DUS Storage Test"
+	@echo "========================================="
+	$(VVP) $(VVP_FLAGS) $(OUT_DUS_STORAGE)
+	@echo ""
+	@echo "Waveform saved to: $(VCD_DUS_STORAGE)"
+	@echo "View with: make wave_dus_storage"
+
+$(OUT_DUS_STORAGE): $(RTL_DIR)/ttc3_dus_storage.sv $(TB_DUS_STORAGE)
+	$(IVERILOG) $(IVERILOG_FLAGS) -o $@ $(TB_DUS_STORAGE) $(RTL_DIR)/ttc3_dus_storage.sv
+
+# Device ID test
+test_device_id: $(OUT_DEVICE_ID)
+	@echo "========================================="
+	@echo "Running Device ID Test"
+	@echo "========================================="
+	$(VVP) $(VVP_FLAGS) $(OUT_DEVICE_ID)
+	@echo ""
+	@echo "Waveform saved to: $(VCD_DEVICE_ID)"
+	@echo "View with: make wave_device_id"
+
+$(OUT_DEVICE_ID): $(RTL_DIR)/ttc3_device_id.sv $(TB_DEVICE_ID)
+	$(IVERILOG) $(IVERILOG_FLAGS) -o $@ $(TB_DEVICE_ID) $(RTL_DIR)/ttc3_device_id.sv
+
+# ===========================================================================
+# Run All Tests
+# ===========================================================================
+test_all: test_dus_storage test_device_id test_top
+	@echo ""
+	@echo "========================================="
+	@echo "ALL TESTS COMPLETED"
+	@echo "========================================="
+
+# ===========================================================================
+# Waveform Viewing
+# ===========================================================================
+wave_top:
+	$(GTKWAVE) $(VCD_TOP) &
+
+wave_dus_storage:
+	$(GTKWAVE) $(VCD_DUS_STORAGE) &
+
+wave_device_id:
+	$(GTKWAVE) $(VCD_DEVICE_ID) &
+
+# ===========================================================================
+# Cleanup
+# ===========================================================================
+clean:
+	rm -f *.vvp *.vcd *.log
+	@echo "Cleaned all generated files"
+
+# ===========================================================================
+# Help
+# ===========================================================================
+help:
+	@echo "TTC3 Icarus Verilog Testbench Makefile"
+	@echo ""
+	@echo "Targets:"
+	@echo "  make                    - Run top-level integration test (default)"
+	@echo "  make test_top           - Run top-level integration test"
+	@echo "  make test_dus_storage   - Run DUS storage module test"
+	@echo "  make test_device_id     - Run Device ID module test"
+	@echo "  make test_all           - Run all tests sequentially"
+	@echo ""
+	@echo "Waveform Viewing:"
+	@echo "  make wave_top           - View top-level waveform with GTKWave"
+	@echo "  make wave_dus_storage   - View DUS storage waveform"
+	@echo "  make wave_device_id     - View Device ID waveform"
+	@echo ""
+	@echo "Maintenance:"
+	@echo "  make clean              - Remove all generated files"
+	@echo "  make help               - Show this help message"
+
+.PHONY: all test_top test_dus_storage test_device_id test_all \
+        wave_top wave_dus_storage wave_device_id clean help

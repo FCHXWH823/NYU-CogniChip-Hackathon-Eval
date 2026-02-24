@@ -1,0 +1,192 @@
+# ===========================================================================
+# TTC3 UVM Verification Makefile
+# ===========================================================================
+# Supports Questa/ModelSim, Xcelium, and VCS
+# Usage:
+#   make questa        # Compile and run with Questa
+#   make xcelium       # Compile and run with Xcelium
+#   make vcs           # Compile and run with VCS
+#   make clean         # Clean build artifacts
+# ===========================================================================
+
+# Configuration
+SIMULATOR  ?= questa
+TEST       ?= ttc3_security_test
+UVM_HOME   ?= /opt/uvm-1.2
+VERBOSITY  ?= UVM_MEDIUM
+
+# Design files
+RTL_FILES = ttc3_dus_storage.sv \
+            ttc3_device_id.sv \
+            ttc3_kdf.sv \
+            ttc3_sha256.sv \
+            ttc3_hmac.sv \
+            ttc3_aes_ctr.sv \
+            ttc3_top.sv
+
+# Testbench files
+TB_FILES  = ttc3_if.sv \
+            ttc3_pkg.sv \
+            ttc3_tb_top.sv
+
+ALL_FILES = $(RTL_FILES) $(TB_FILES)
+
+# ===========================================================================
+# Questa/ModelSim Targets
+# ===========================================================================
+questa: questa_compile questa_sim
+
+questa_compile:
+	@echo "=== Compiling with Questa ==="
+	vlog -sv \
+	     +incdir+$(UVM_HOME)/src \
+	     $(UVM_HOME)/src/uvm_pkg.sv \
+	     $(ALL_FILES)
+
+questa_sim:
+	@echo "=== Running $(TEST) with Questa ==="
+	vsim -c \
+	     +UVM_TESTNAME=$(TEST) \
+	     +UVM_VERBOSITY=$(VERBOSITY) \
+	     -do "run -all; quit -f" \
+	     ttc3_tb_top
+
+questa_gui:
+	@echo "=== Running $(TEST) with Questa GUI ==="
+	vsim -gui \
+	     +UVM_TESTNAME=$(TEST) \
+	     +UVM_VERBOSITY=$(VERBOSITY) \
+	     ttc3_tb_top
+
+# ===========================================================================
+# Xcelium Targets
+# ===========================================================================
+xcelium: xcelium_compile xcelium_sim
+
+xcelium_compile:
+	@echo "=== Compiling with Xcelium ==="
+	xmvlog -sv \
+	       -uvmhome $(UVM_HOME) \
+	       +incdir+$(UVM_HOME)/src \
+	       $(ALL_FILES)
+
+xcelium_sim:
+	@echo "=== Running $(TEST) with Xcelium ==="
+	xmsim -uvmhome $(UVM_HOME) \
+	      +UVM_TESTNAME=$(TEST) \
+	      +UVM_VERBOSITY=$(VERBOSITY) \
+	      ttc3_tb_top
+
+# ===========================================================================
+# VCS Targets
+# ===========================================================================
+vcs: vcs_compile vcs_sim
+
+vcs_compile:
+	@echo "=== Compiling with VCS ==="
+	vcs -sverilog \
+	    -ntb_opts uvm-1.2 \
+	    +incdir+$(VCS_HOME)/etc/uvm-1.2/src \
+	    $(ALL_FILES) \
+	    -o simv
+
+vcs_sim:
+	@echo "=== Running $(TEST) with VCS ==="
+	./simv +UVM_TESTNAME=$(TEST) \
+	       +UVM_VERBOSITY=$(VERBOSITY)
+
+# ===========================================================================
+# Test Suite
+# ===========================================================================
+test_all: test_security test_random test_reset
+
+test_security:
+	@echo "=== Running Security Test ==="
+	$(MAKE) $(SIMULATOR) TEST=ttc3_security_test
+
+test_random:
+	@echo "=== Running Random Test ==="
+	$(MAKE) $(SIMULATOR) TEST=ttc3_random_test
+
+test_reset:
+	@echo "=== Running Reset Test ==="
+	$(MAKE) $(SIMULATOR) TEST=ttc3_reset_test
+
+# ===========================================================================
+# Regression
+# ===========================================================================
+regression:
+	@echo "=== Running Full Regression ==="
+	@for test in ttc3_security_test ttc3_random_test ttc3_reset_test; do \
+		echo ""; \
+		echo "================================================"; \
+		echo "Running: $$test"; \
+		echo "================================================"; \
+		$(MAKE) $(SIMULATOR) TEST=$$test || exit 1; \
+	done
+	@echo "================================================"
+	@echo "REGRESSION PASSED: All tests completed successfully"
+	@echo "================================================"
+
+# ===========================================================================
+# Coverage
+# ===========================================================================
+coverage_questa:
+	@echo "=== Generating Coverage Report (Questa) ==="
+	vsim -c \
+	     -coverage \
+	     +UVM_TESTNAME=$(TEST) \
+	     -do "coverage save -onexit coverage.ucdb; run -all; quit -f" \
+	     ttc3_tb_top
+	vcover report -html -htmldir coverage_html coverage.ucdb
+
+# ===========================================================================
+# Cleanup
+# ===========================================================================
+clean:
+	@echo "=== Cleaning build artifacts ==="
+	rm -rf work/
+	rm -rf csrc/
+	rm -rf simv*
+	rm -rf *.log
+	rm -rf *.fst
+	rm -rf *.vcd
+	rm -rf *.ucdb
+	rm -rf coverage_html/
+	rm -rf xcelium.d/
+	rm -rf .vlogansetup*
+	rm -rf DVEfiles/
+	rm -rf transcript
+	rm -rf vsim.wlf
+
+# ===========================================================================
+# Help
+# ===========================================================================
+help:
+	@echo "TTC3 UVM Verification Makefile"
+	@echo ""
+	@echo "Targets:"
+	@echo "  questa         - Compile and run with Questa/ModelSim"
+	@echo "  xcelium        - Compile and run with Xcelium"
+	@echo "  vcs            - Compile and run with VCS"
+	@echo "  test_all       - Run all three tests"
+	@echo "  regression     - Run full regression suite"
+	@echo "  coverage_questa- Generate coverage report (Questa)"
+	@echo "  clean          - Remove build artifacts"
+	@echo ""
+	@echo "Variables:"
+	@echo "  SIMULATOR      - Choose simulator (questa|xcelium|vcs)"
+	@echo "  TEST           - Select test (ttc3_security_test|ttc3_random_test|ttc3_reset_test)"
+	@echo "  UVM_HOME       - Path to UVM library"
+	@echo "  VERBOSITY      - UVM verbosity (UVM_LOW|UVM_MEDIUM|UVM_HIGH)"
+	@echo ""
+	@echo "Examples:"
+	@echo "  make questa TEST=ttc3_security_test"
+	@echo "  make xcelium TEST=ttc3_random_test VERBOSITY=UVM_HIGH"
+	@echo "  make test_all SIMULATOR=vcs"
+
+.PHONY: questa questa_compile questa_sim questa_gui \
+        xcelium xcelium_compile xcelium_sim \
+        vcs vcs_compile vcs_sim \
+        test_all test_security test_random test_reset \
+        regression coverage_questa clean help
