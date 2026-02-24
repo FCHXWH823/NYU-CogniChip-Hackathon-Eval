@@ -1,0 +1,25 @@
+Group,Team Name,Technical Correctness (/30),Cognichip Platform Usage (/20),Innovation & Creativity (/15),Clarity — Slides (/10),Clarity — Video (/10),Clarity — Repo Organization (/5),Potential Real-World Impact (/10),Bonus — FPGA/Tiny Tapeout (/10),Total (/110),Verdict
+group001,E20 Modified RISC Processor,25,8,8,7,0,5,5,0,58,Strong
+group002,AI-Driven Layout-Aware RTL Optimization Loop,12,18,13,7,0,4,8,0,62,Strong
+group003,AI-Guided Memory Hierarchy Design for Edge LLM Inference,22,16,12,7,0,4,8,0,69,Strong
+group004,Andre Nakkab Cognichip Hackathon (AES with ROME),8,10,9,7,0,1,5,0,40,Weak
+group005,ARCH-AI Cognichip Hackathon,12,5,11,7,0,3,7,0,45,Average
+group006,EcoTraining: Energy-Efficient Gradient Compression (Train Neo Bit),24,15,11,7,7,3,8,0,75,Strong
+group007,Cognichip RV32IF Power Optimized RISC-V,26,16,11,7,0,4,7,8,79,Strong
+group008,Cognichip NetworkArbiter,10,8,7,7,0,3,5,0,40,Weak
+group009,Out-of-Order (OoO) Design Project,5,4,9,7,0,2,6,0,33,Weak
+group010,CogniChip Adaptive Power Management (Team PowerNap),5,5,7,7,0,0,6,0,30,Weak
+group011,CogniChip SETH,10,5,5,7,0,2,4,0,33,Weak
+group012,Cognichip TinyMAC (2x2 MAC Array),20,8,8,7,3,3,7,0,56,Average
+group013,Automated Design of RISC-V Processors using LLM-Guided Feedback,18,10,10,7,0,3,6,0,54,Average
+group014,FABB — Full-Auto Bug Buster,12,6,12,7,2,4,9,0,52,Average
+group015,FLUX RV32I (CogniChip 2026),26,15,12,7,7,5,8,7,87,Strong
+group016,FunkyMonkey: NeuroRISC Neural Processing Accelerator,20,8,12,7,7,4,9,0,67,Strong
+group017,Moving Average Filter / Tiny Tapeout,18,10,10,7,0,4,6,8,63,Strong
+group018,On-board Image Classification (CNN on FPGA),27,6,13,7,7,5,9,8,82,Strong
+group019,RISC-V CPU Design with AI (5-Stage Pipeline),12,6,7,7,0,3,5,0,40,Weak
+group020,SmartCache: AI-Driven Memory Hierarchy Optimization,20,12,11,7,7,3,8,0,68,Strong
+group021,QuantEdge Silicon: AI-Assisted Hardware Trading Pipeline,12,15,11,7,7,4,8,0,64,Strong
+group022,TeenyTinyTrustyCore (3TC) — Hardware Root of Trust,22,17,13,7,7,4,9,0,79,Strong
+group023,VERICADE: Educational FPGA Logic Lab Arcade,22,15,11,7,7,5,8,2,77,Strong
+group024,VeriGuard: AI-Driven Detection of Silent Verification Escapes,22,15,13,7,7,4,9,0,77,Strong
